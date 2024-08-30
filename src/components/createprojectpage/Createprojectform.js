@@ -19,35 +19,48 @@ function Createprojectform() {
   const handleDeviseChange = (e) => setDevise(e.target.value);
   const handleDateChange = (e) => setDate(e.target.value);
   const handleCategorieChange = (e) => setCategorie(e.target.value);
+  const today = new Date().toISOString().split("T")[0];
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if any required field is empty
-    if (!title || !description || !images || !budget || !date || !categorie) {
+    // Validate form fields and date
+    if (!title || !description || images.length === 0 || !budget || !date || !categorie) {
       setError("Veuillez remplir tous les champs.");
-    } else {
-      setError("");
-      // Proceed with form submission
-      console.log("Form submitted:", {
-        title,
-        description,
-        images,
-        budget,
-        devise,
-        date,
-        categorie,
-      });
-
-      // Optionally, reset form state after submission
-      setTitle("");
-      setDescription("");
-      setImages("");
-      setBudget("");
-      setDevise("");
-      setDate("");
-      setCategorie("");
+      return;
     }
+
+    // Validate that the selected date is not in the past
+    if (date < today) {
+      setError("La date de fin ne doit pas être antérieure à aujourd'hui.");
+      return;
+    }
+
+    if (!/^\d+$/.test(budget)) {
+      setError("Le budget doit contenir uniquement des chiffres.");
+      return;
+    }
+
+    // Proceed with form submission
+    setError("");
+    console.log("Form submitted:", {
+      title,
+      description,
+      images,
+      budget,
+      devise,
+      date,
+      categorie,
+    });
+
+    // Reset form state after submission
+    setTitle("");
+    setDescription("");
+    setImages([]);
+    setBudget("");
+    setDevise("");
+    setDate("");
+    setCategorie("");
   };
 
   const handleIconClick = () => {
@@ -55,8 +68,17 @@ function Createprojectform() {
   };
 
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files).map((file) => file.name).join(", ");
+    const files = Array.from(e.target.files);
+
+    // Check if the total number of images exceeds 5
+    if (files.length > 5) {
+      setError("Vous ne pouvez pas sélectionner plus de 5 images.");
+      return;
+    }
+
+    // Update images state and clear error if under limit
     setImages(files);
+    setError("");
   };
 
   return (
@@ -93,7 +115,7 @@ function Createprojectform() {
 
           <div className={styles.formGroup}>
             <label htmlFor="images" className={styles.formLabel}>
-              Images de projet
+              Images de projet *
             </label>
             <input
               type="text"
@@ -121,7 +143,7 @@ function Createprojectform() {
 
           <div className={styles.formGroup}>
             <label htmlFor="budget" className={styles.formLabel}>
-              Budget
+              Budget *
             </label>
             <input
               type="text"
@@ -153,7 +175,7 @@ function Createprojectform() {
 
           <div className={styles.formGroup}>
             <label htmlFor="date" className={styles.formLabel}>
-              Date
+              Date *
             </label>
             <input
               type="date"
