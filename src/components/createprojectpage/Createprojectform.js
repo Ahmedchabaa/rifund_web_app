@@ -5,27 +5,31 @@ import styles from "./Createprojectform.module.css";
 function Createprojectform() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [images, setImages] = useState("");
+  const [images, setImages] = useState([]);
+  const [imageNames, setImageNames] = useState("");
   const [budget, setBudget] = useState("");
   const [devise, setDevise] = useState("");
   const [date, setDate] = useState("");
   const [categorie, setCategorie] = useState("");
+  const [numcompte, setNumcompte] = useState("");
   const [error, setError] = useState("");
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
   const handleImagesChange = (e) => setImages(e.target.value);
+  const handleImagenamesChange = (e) => setImageNames(e.target.value);
   const handleBudgetChange = (e) => setBudget(e.target.value);
   const handleDeviseChange = (e) => setDevise(e.target.value);
   const handleDateChange = (e) => setDate(e.target.value);
   const handleCategorieChange = (e) => setCategorie(e.target.value);
+  const handleNumcompteChange = (e) => setNumcompte(e.target.value);
   const today = new Date().toISOString().split("T")[0];
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validate form fields and date
-    if (!title || !description || images.length === 0 || !budget || !date || !categorie) {
+    if (!title || !description || images.length === 0 || !budget || !date || !categorie || !numcompte) {
       setError("Veuillez remplir tous les champs.");
       return;
     }
@@ -41,6 +45,11 @@ function Createprojectform() {
       return;
     }
 
+    if (!/^\d{16}$/.test(numcompte)) {
+      setError("Le numéro du compte doit contenir exactement 16 chiffres.");
+      return;
+    }
+
     // Proceed with form submission
     setError("");
     console.log("Form submitted:", {
@@ -51,16 +60,19 @@ function Createprojectform() {
       devise,
       date,
       categorie,
+      numcompte,
     });
 
     // Reset form state after submission
     setTitle("");
     setDescription("");
     setImages([]);
+    setImageNames("");
     setBudget("");
     setDevise("");
     setDate("");
     setCategorie("");
+    setNumcompte("");
   };
 
   const handleIconClick = () => {
@@ -76,8 +88,10 @@ function Createprojectform() {
       return;
     }
 
-    // Update images state and clear error if under limit
+    // Extract file names and update state
+    const fileNames = files.map((file) => file.name).join(", ");
     setImages(files);
+    setImageNames(fileNames); // Set the file names state
     setError("");
   };
 
@@ -119,11 +133,11 @@ function Createprojectform() {
             </label>
             <input
               type="text"
-              id="images"
+              id="imageNames"
               className={styles.formInput}
-              placeholder="Images approximatives de votre projet "
-              value={images}
-              onChange={handleImagesChange}
+              value={imageNames} // Display the filenames
+              readOnly
+              placeholder="Noms des fichiers sélectionnés"
             />
             <button
               type="button"
@@ -208,6 +222,19 @@ function Createprojectform() {
               <option value="Mariage">Mariage</option>
               <option value="Evènement">Evènement</option>
             </select>
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="numerocompte" className={styles.formLabel}>
+              Numéro du compte *
+            </label>
+            <input
+              type="text"
+              id="numcompt"
+              className={styles.formInput}
+              placeholder="Numéro du compte courant de 16 chiffres"
+              value={numcompte}
+              onChange={handleNumcompteChange}
+            />
           </div>
           {error && <p className={styles.errorMessage}>{error}</p>}
           <button type="submit" className={styles.submitButton}>
