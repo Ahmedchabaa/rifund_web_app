@@ -65,6 +65,7 @@
     font-family: 'Inter', sans-serif;
     line-height: 33.6px;
     margin: 0;
+    
   }
   
   .highlight {
@@ -115,8 +116,8 @@
   }
   
   .servicesIllustration {
-    display: block;
-    max-width: 30%;
+    width: 760px;
+    height: 456px;
     margin-top: 3%;
    margin-left: 50%;
   }
@@ -135,24 +136,34 @@
 }
 
 .aboutSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Inter',sans-serif;
+  flex: 1;
+  font-weight: 600;
   padding: 20px;
-  width: 70%;
-  height: 500px; /* Specify height with units (e.g., px) */
-  background-color: #77a83a; /* Example background color */
-  margin: 0 auto; /* Center horizontally */
-  text-align: center; /* Center text inside */
-  font-weight: bold;
+  width: 900px;
+  margin-left: 20%;
+  height: 443px;
+  background-color: #77A83A; /* Light background for contrast */
+  color: #fff; /* Darker text for readability */
+  text-align: center;
+}
+
+.aboutSection h3 {
+  margin-top: 13%;
+  font-size: 24px; /* Slightly larger font for heading */
+  margin-bottom: 15px; /* Space below the heading */
+  color: #fff; /* Matching the primary theme color */
 }
 
 .aboutTitle {
-    font-family: 'Inter', sans-serif;
-  color: white; /* Text color */
-  font-size: 30px; /* Adjust font size */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  text-align: justify; /* Justifies the text */
+  font-size: 24px; /* Clear readable font size */
+  line-height: 1.6; /* Comfortable line spacing for better readability */
+  white-space: pre-line; /* This ensures line breaks are respected */
+  color: #fff; /* Slightly muted text color */
 }
+
+
 
   
   

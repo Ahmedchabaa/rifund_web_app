@@ -25,7 +25,7 @@ const Home = () => {
         />
         <div className={styles.overlayText}>
           <div className={styles.Text}>
-            <p>Nous sommes là pour vous accompagner à chaque étape</p>
+            <pre>Nous sommes là pour vous <br />accompagner à chaque étape</pre>
           </div>
           <div className={styles.text2}>
             <p>Donner<br />  un coup de main s'impliquer</p>

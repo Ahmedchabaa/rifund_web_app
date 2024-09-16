@@ -13,8 +13,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .projectImage {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
     margin: 0; /* Ensure no margin is applied */
     border-radius: 0; /* Ensure no border radius is applied */
 }
@@ -26,6 +25,7 @@
     flex-direction: column;
     justify-content: space-between; /* Ensure the content is spaced out */
     width: 100%;
+    text-align: justify;
 }
 
 .projectDate {
@@ -71,20 +71,26 @@
     font-family: 'Inter', sans-serif;
     line-height: 33.6px;
 }
-
 .buttonWrapper {
     display: flex;
     justify-content: space-between; /* Ensure buttons are aligned */
     gap: 10px; /* Space between buttons */
     margin-top: 10px; /* Adjust margin as needed */
-    width:100%; /* Ensure buttons take full width */
+    width: 100%; /* Ensure buttons take full width */
+}
+
+.moreButton {
+    width: 20%; /* Smaller width for the 'More' button */
+}
+
+.donateButton {
+    width: 90%; /* Larger width for the 'Donate' button */
 }
 
 .moreButton, .donateButton {
     background-color: #77A83A; /* Button background color */
     color: #fff;
     border: none;
-    padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 14px;
@@ -92,7 +98,6 @@
     line-height: 33.6px;
     font-weight: bold;
     height: 40px; /* Fixed height for buttons */
-    flex: 1; /* Make buttons take equal space */
     text-align: center; /* Center text in button */
 }
 

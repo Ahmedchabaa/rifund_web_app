@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Footer.module.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -8,13 +8,24 @@ const socialIcons = [
   { iconClass: "fab fa-instagram", alt: "Instagram", url: "https://www.instagram.com/rifund" },
   { iconClass: "fas fa-envelope", alt: "Email", url: "mailto:rhgrouperif@gmail.com" }
 ];
-function scrollToSection(event) {
-  event.preventDefault();
-  document.querySelector('#stats').scrollIntoView({
-    behavior: 'smooth'
-  });
-}
+
 function Footer() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!email) {
+      setError('Please enter your email address.');
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      setError('Please enter a valid email address.');
+    } else {
+      setError('');
+      // Process the email subscription here
+      alert('Thank you for subscribing!');
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -35,11 +46,20 @@ function Footer() {
           </nav>
         </div>
         <div className={styles.newsletterSection}>
-          <form className={styles.newsletterForm}>
-            <label htmlFor="newsletterEmail" className={styles.visuallyHidden}>Adresse e-mail pour la newsletter</label>
-            <input type="email" id="newsletterEmail" placeholder="you@example.com" className={styles.emailInput} />
+          <form className={styles.newsletterForm} onSubmit={handleSubmit}>
+            <input 
+              type="email" 
+              id="newsletterEmail" 
+              placeholder="you@example.com" 
+              className={styles.emailInput} 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
             <button type="submit" className={styles.submitButton}>Envoyer</button>
+            {error && <p className={styles.errorText}>{error}</p>}
           </form>
+
           <div className={styles.socialSection}>
             <p className={styles.socialText}>Suivez nous sur :</p>
             <div className={styles.socialIcons}>
@@ -52,11 +72,9 @@ function Footer() {
           </div>
         </div>
       </div>
-        <div className={styles.copyrightSection}>
-          <img src="rifund.png" alt="Rifund Logo" className={styles.footerLogo} />
-          <p className={styles.copyrightText}>Rifund</p>
-          <p className={styles.copyrightYear}>Copyright © 2024</p>
-        </div>
+      <div className={styles.copyrightSection}>
+        <p className={styles.copyrightYear}>Rifund Copyright © 2024</p>
+      </div>
     </footer>
   );
 }

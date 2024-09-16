@@ -46,12 +46,13 @@ function About() {
         className={styles.servicesIllustration}
       />
       <div className={styles.aboutSection}>
-      <pre className={styles.aboutTitle}>
-        RiFund est une solution innovante de financement participatif 
-        <br/>qui se distingue par son approche centrée
-        <br/> sur la transparence et la sécurité des investissements.
-        </pre>
-       </div>
+        <h3>RiFund</h3>
+         <p className={styles.aboutTitle}>
+          Est une solution innovante de financement participatif 
+      qui se distingue par son approche centrée
+         sur la transparence et la sécurité des investissements.
+           </p>
+          </div>
     </section>
   );
 }
