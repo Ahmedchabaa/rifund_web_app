@@ -19,7 +19,7 @@
 }
 
 .logoImage {
-  width: 200px;
+  width: 160px;
   height: 40px;
 }
 
@@ -38,7 +38,7 @@
 
 .navLink {
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -75,7 +75,7 @@
   gap: 12px;
   margin-right: 4%;
   padding: 11px 22px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   cursor: pointer;

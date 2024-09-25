@@ -1,4 +1,3 @@
-/* Footer.module.css */
 .footer {
   display: flex;
   flex-direction: column;
@@ -23,15 +22,13 @@
   width: 30%;
 }
 
-.sectionTitle {
-  font-size: 18px;
-  margin-bottom: 10px;
-  line-height: 33.6px;
-}
+
+
 .footerNav {
   list-style-type: none;
   padding: 0;
-  margin: 0; /* Ensure no default margin */
+  margin: 0 auto; /* Center the list */
+  display: inline-block; /* Makes the list compact */
 }
 
 .footerNav li {
@@ -41,15 +38,15 @@
 .footerNav li a {
   color: #fff;
   text-decoration: none;
-  display: block; /* Makes the entire list item clickable */
-  padding: 10px; /* Add padding inside each link for spacing */
+  display: inline-block; /* Reduce link width */
+  padding: 5px 10px; /* Adjust padding */
+  width: auto;
 }
 
 .footerNav li a:hover {
   color: #77A83A;
-  cursor: pointer; /* Optional: Change cursor to indicate it's clickable */
+  cursor: pointer;
 }
-
 
 .newsletterForm {
   display: flex;
@@ -86,12 +83,14 @@
   color: #ecf0f1;
 }
 
+
 .copyrightSection {
-  align-self: flex-start; /* Positions it to the left */
+  display: flex;
+  justify-content: left; /* Center the content */
   width: 100%;
-  text-align: left;
-  border-top: 1px solid #B3B3B3; /* Adds the underline */
+  border-top: 1px solid #B3B3B3;
   padding-top: 10px;
+  text-align: left;
 }
 
 

@@ -36,9 +36,10 @@ function Footer() {
           </p>
         </div>
         <div className={styles.linksSection}>
-          <h3 className={styles.sectionTitle}>Actualités</h3>
+          
           <nav>
             <ul className={styles.footerNav}>
+          
               <li><a href="/">Projets</a></li>
               <li><a href="/home#stats">Statistiques</a></li>
               <li><a href="/contact">Contacts</a></li>

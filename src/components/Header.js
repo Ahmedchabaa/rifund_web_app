@@ -99,7 +99,7 @@ function Header() {
             <div className={styles.profileItem} onClick={handleDropdownToggle}>
               <img
                 className={styles.profileImg}
-                src="https://s3-alpha-sig.figma.com/img/92a2/b060/70c458bafe1acc0e7cb6429a9dcc568c?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GuuFOl9dEWoWg7JGUxq0l4wTmfIf-Q391pWUSkeTqcZJhQN7yPockKXp~mjpyEMVzmO8pPt3LGLgazCuDocWyNufMUnAQKYcKJzzn265wkJrIEU21ZmRyHxjwoc2B~3j481W2bwFoMMl08cq8RFAEFXesCp3NXA3ub6Bvqae870RH~cFoXdEkkMfPOdXAloK8Q1pyOIBV6jRdPxWkhIiq4YPWiTYrsw-kgDPu63kGidVGN88gR-KZispRIxKdSdRXUuOCcNPnaHTfpeIeCKz~-6FchZ-~Kyx1MiFOmK~Bn~tDXQEuokAdJqmlLpsDw-nJ4UW0ibI~3cYux9cZjQoeQ__"
+                src="/user2.png"
                 alt=""
               />
               <div>
