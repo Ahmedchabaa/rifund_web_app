@@ -1,112 +1,134 @@
 /* Sidebar.module.css */
 
 .sidebar {
-    width: 250px;
-    background-color: black; /* Sidebar background color */
-    color: #ecf0f1; /* Text color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    height: 100vh; /* Full height */
-  }
-  .profilePhotoImage {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .logo {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .userProfile {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative; /* Added position relative for dropdown positioning */
-  }
-  
-  .divider {
-    border: 1px solid #ecf0f1; /* Divider color */
-    margin: 10px 0;
-  }
-  
+  width: 250px;
+  background-color: #2c3e50; /* Dark slate background for a sleek look */
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Depth with shadow */
+  height: 100vh;
+  transition: width 0.3s; /* Smooth width transition for responsiveness */
+}
 
-  .userInfo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer; /* Changed cursor to pointer to indicate clickable */
+.profilePhotoImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #77A83A; /* Border around the profile photo */
+}
+
+.logo {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #77A83A; /* Highlight brand name */
+}
+
+.userProfile {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.divider {
+  border: 1px solid #34495e; /* Subtle divider */
+  margin: 15px 0;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+.userStatus {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ecf0f1;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 180px;
+}
+
+.dropdownItem {
+  padding: 12px 20px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdownItem:hover {
+  background-color: #bdc3c7;
+}
+
+.sidebarMenu {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.menuItem {
+  width: 100%;
+  background-color: transparent;
+  color: #ecf0f1;
+  border: none;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font-size: medium;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.menuItem:hover {
+  background-color: #77A83A;
+  padding-left: 30px; /* Subtle hover animation */
+}
+
+.menuItem.active {
+  background-color: #44651B; /* Active state color */
+}
+
+.menuIcon {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar {
+      width: 70px; /* Collapses sidebar width */
   }
-  
-  .userName {
-    font-size: 18px;
-    font-weight: bold;
+  .menuItem span {
+      display: none; /* Hides text on small screens */
   }
-  
-  .userStatus {
-    width: 20px;
-    height: 20px;
+  .logo {
+      font-size: 18px;
   }
-  
-  .dropdownMenu {
-    position: absolute; /* Absolute positioning for dropdown */
-    top: 100%;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    border-radius: 5px; /* Rounded corners */
-    overflow: hidden; /* Ensures dropdown items are contained */
-    width: 150px; /* Fixed width for dropdown */
-    text-align: left; /* Align text to the left */
-  }
-  
-  .dropdownItem {
-    padding: 10px 15px;
-    background-color: #fff;
-    color: #333; /* Text color for dropdown items */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .dropdownItem:hover {
-    background-color: #f0f0f0; /* Hover state */
-  }
-  
-  .sidebarMenu {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .menuItem {
-    width: 100%;
-    background-color: #77A83A; /* Button background color */
-    color: #ecf0f1;
-    border: none;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    cursor: pointer;
-    font-size: medium;
-    transition: background-color 0.3s;
-  }
-  
-  .menuItem:hover {
-    background-color: #44651B; /* Hover state */
-  }
-  
-  .menuIcon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
+}

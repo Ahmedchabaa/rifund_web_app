@@ -1,41 +1,45 @@
-/* SearchBar.module.css */
-
 .searchBar {
-    display: flex;
-    align-items: center;
-    background-color: #EDF0C7; /* Background color for the search bar */
-    border-radius: 8px; /* Rounded corners */
-    padding: 5px 10px;
-    width: 100%;
-    max-width: 500px; /* Max width for the search bar */
-    margin: 0 auto; /* Centering the search bar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  .visuallyHidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-  
-  .searchInput {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    outline: none; /* Removes default outline */
-  }
-  
-  .searchIcon {
-    width: 24px;
-    height: 24px;
-    margin-left: 10px;
-    cursor: pointer; /* Pointer cursor for icon */
-  }
-  
+  display: flex;
+  align-items: center;
+  background-color: #EDF0C7; /* Background color for the search bar */
+  border-radius: 8px; /* Rounded corners */
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 500px; /* Max width for the search bar */
+  margin: 0 auto; /* Centering the search bar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  outline: none; /* Removes default outline */
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  cursor: pointer; /* Pointer cursor for icon */
+  transition: transform 0.2s, color 0.2s; /* Smooth transform and color on hover */
+  color: #555; /* Default icon color */
+}
+
+.searchIcon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  color: #77A83A; /* Change color on hover */
+}

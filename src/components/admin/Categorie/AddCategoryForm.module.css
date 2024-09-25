@@ -1,49 +1,63 @@
 .formContainer {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form h2 {
-    margin-bottom: 10px;
-  }
-  
-  .form label {
-    margin-bottom: 10px;
-  }
-  
-  .submitButton {
-    background-color: #77A83A;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-left: 25%;
-    width: 50%;
-  }
-  
-  .closeButton {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-left: 25%;
-    width: 50%;
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px; /* Increased padding for more spacious layout */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for better depth */
+  z-index: 1000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  margin-bottom: 20px; /* Increased margin for better spacing */
+  font-size: 1.5rem; /* Adjusted font size */
+  color: #333; /* Darker color for better readability */
+}
+
+.form label {
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  font-weight: 500; /* Bold for emphasis */
+  color: #555; /* Slightly darker color */
+}
+
+.form input[type="text"], .form input[type="file"] {
+  border: 1px solid #ddd; /* Border for input fields */
+  border-radius: 4px; /* Rounded corners for inputs */
+  padding: 10px; /* Inner padding for comfort */
+  margin-top: 5px; /* Spacing above input */
+  font-size: 14px; /* Consistent font size */
+}
+
+.submitButton, .closeButton {
+  background-color: #77A83A; /* Green for submit button */
+  color: white;
+  border: none;
+  padding: 12px; /* Slightly larger padding for buttons */
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px; /* Increased margin for better separation */
+  border-radius: 4px; /* Rounded corners for buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  width: 50%; /* Consistent button width */
+  align-self: center; /* Center buttons */
+}
+
+.submitButton:hover {
+  background-color: #44651B; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.closeButton {
+  background-color: #f44336; /* Red for the cancel button */
+}
+
+.closeButton:hover {
+  background-color: #c62828; /* Darker shade on hover */
+}

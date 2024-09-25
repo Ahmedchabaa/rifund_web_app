@@ -1,16 +1,21 @@
 .container {
-  padding: 20px;
+  padding: 30px; /* Adjust padding as needed */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Adjust as needed */
 }
 
 .header h2 {
-  margin-left: 40%;
+  font-size: 24px; /* Font size */
+  font-weight: 600; /* Font weight */
+  color: #333; /* Text color */
 }
 
 .addButton {
@@ -24,65 +29,67 @@
   height: 50px; /* Set the height of the button */
   border-radius: 50%; /* Make the button circular */
   cursor: pointer;
-  font-size: 18px; /* Adjust font size to fit well inside the circle */
-  padding: 5px; /* Remove default padding */
+  font-size: 18px; /* Font size */
+  transition: background-color 0.3s ease; /* Transition effect */
 }
 
 .addButton:hover {
   background-color: #44651B; 
 }
 
-
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background-color: #fff; /* Table background */
 }
 
 .table th, .table td {
+  padding: 12px; /* Padding for table cells */
+  text-align: center; /* Centered text */
   border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+}
+
+.table th:last-child, .table td:last-child {
+  border-right: none; /* Remove right border for the last column */
 }
 
 .table th {
-  background-color: #EDF0C7;
+  background-color: #77A83A; /* Header background */
+  color: white; /* Header text color */
+  font-weight: bold; /* Header font weight */
 }
 
 .image {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+  width: 50px; /* Image width */
+  height: 50px; /* Image height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Button styles */
+.actionButton, .actiondelete {
+  border: none; /* No border */
+  padding: 8px 12px; /* Padding for buttons */
+  margin: 0 5px; /* Margin between buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: white; /* Text color */
+  font-size: 14px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Transition effect */
 }
 
 .actionButton {
-  background-color: #77A83A;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.actiondelete {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  background-color: #77A83A; /* Action button background */
 }
 
 .actionButton:hover {
-  background-color: #44651B;
+  background-color: #44651B; /* Hover effect */
 }
 
-.actionButton:active {
-  background-color: #44651B;
+.actiondelete {
+  background-color: #DF3838; /* Delete button background */
 }
+
 .actiondelete:hover {
-  background-color: #DF3838;
-}
-
-.actiondelete:active {
-  background-color: #DF3838;
+  background-color: #B22222; /* Hover effect */
 }

@@ -1,12 +1,30 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import styles from './SearchBar.module.css';
 
 function SearchBar() {
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      console.log('Searching for:', event.target.value);
+    }
+  };
+
   return (
     <div className={styles.searchBar}>
       <label htmlFor="search" className={styles.visuallyHidden}>Rechercher</label>
-      <input type="text" id="search" placeholder="Rechercher" className={styles.searchInput} />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13e496443de6730e76c9b2382c2a2a87d12e47e47cc91170bdcbe58a31dfda50?apiKey=020fffa760da4a3f892552f6ac11e7d9&&apiKey=020fffa760da4a3f892552f6ac11e7d9" alt="Search icon" className={styles.searchIcon} />
+      <input 
+        type="text" 
+        id="search" 
+        placeholder="Rechercher" 
+        className={styles.searchInput} 
+        onKeyDown={handleKeyDown} 
+      />
+      <FontAwesomeIcon 
+        icon={faMagnifyingGlass} 
+        className={styles.searchIcon} 
+        onClick={() => console.log('Searching for:', document.getElementById('search').value)} 
+      />
     </div>
   );
 }

@@ -124,8 +124,10 @@ function ManageUsers() {
           <div className={styles.dialog}>
             <h3>Supprimer Utilisateurs</h3>
             <p>Êtes-vous sûr de vouloir supprimer les utilisateurs sélectionnés ?</p>
-            <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
-            <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            <div className={styles.dialogButtons}>
+              <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
+              <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            </div>
           </div>
         </div>
       )}
@@ -136,8 +138,10 @@ function ManageUsers() {
           <div className={styles.dialog}>
             <h3>Valider Utilisateur</h3>
             <p>Êtes-vous sûr de vouloir valider l'utilisateur {currentUser.prenom} {currentUser.nom}?</p>
-            <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
-            <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            <div className={styles.dialogButtons}>
+              <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
+              <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            </div>
           </div>
         </div>
       )}
@@ -148,8 +152,10 @@ function ManageUsers() {
           <div className={styles.dialog}>
             <h3>Refuser Utilisateur</h3>
             <p>Êtes-vous sûr de vouloir refuser l'utilisateur {currentUser.prenom} {currentUser.nom}?</p>
-            <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
-            <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            <div className={styles.dialogButtons}>
+              <button className={styles.confirmButton} onClick={closeDialog}>Oui</button>
+              <button className={styles.cancelButton} onClick={closeDialog}>Non</button>
+            </div>
           </div>
         </div>
       )}

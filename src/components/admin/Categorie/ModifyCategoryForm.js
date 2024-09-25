@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './ModifyCategoryForm.module.css'; // Create this CSS file for styling
+import styles from './ModifyCategoryForm.module.css';
 
 const ModifyCategoryForm = ({ category, onClose }) => {
   const [categoryName, setCategoryName] = useState(category.name);
@@ -15,7 +15,6 @@ const ModifyCategoryForm = ({ category, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Modified Category Name:', categoryName);
     console.log('Image:', image);
 

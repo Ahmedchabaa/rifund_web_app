@@ -6,11 +6,10 @@ function Profile() {
   const [userInfo, setUserInfo] = useState({
     name: "Missaoui Imen",
     role: "Admin",
-    photo: "", // Add state for profile photo
+    photo: "",
   });
-  const [photoPreview, setPhotoPreview] = useState(""); // State for photo preview
-
-  const fileInputRef = useRef(null); // Create a ref for the file input
+  const [photoPreview, setPhotoPreview] = useState("");
+  const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,20 +40,19 @@ function Profile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement save logic here (e.g., API call)
     setIsEditing(false);
   };
 
   const handlePhotoClick = () => {
-    fileInputRef.current.click(); // Trigger file input click
+    fileInputRef.current.click();
   };
 
   return (
     <div className={styles.profile}>
-      <h1 className={styles.h1}>Bienvenu,</h1>
+      <h1 className={styles.h1}>Bienvenue,</h1>
       <div className={styles.profilePhotoContainer} onClick={handlePhotoClick}>
         <img
-          src={userInfo.photo || 'insaf.jpg'} // Use a default profile photo if none is set
+          src={userInfo.photo || 'default-user.png'}
           alt="Profile"
           className={styles.profilePhotoImage}
         />
@@ -63,7 +61,7 @@ function Profile() {
           accept="image/*"
           onChange={handlePhotoChange}
           className={styles.profilePhotoInput}
-          ref={fileInputRef} // Attach the ref to the file input
+          ref={fileInputRef}
         />
       </div>
       {isEditing ? (
@@ -79,18 +77,20 @@ function Profile() {
           <input
             type="password"
             name="password"
-            value={userInfo.password}
             onChange={handleChange}
             className={styles.profileInput}
             placeholder="Nouveau mot de passe"
           />
-          <button type="submit" className={styles.saveButton}>Enregistrer</button>
-          <button type="button" onClick={handleEditToggle} className={styles.cancelButton}>Annuler</button>
+          <div className={styles.buttonGroup}>
+            <button type="submit" className={styles.saveButton}>Enregistrer</button>
+            <button type="button" onClick={handleEditToggle} className={styles.cancelButton}>Annuler</button>
+          </div>
         </form>
       ) : (
         <div className={styles.profileInfo}>
           <span className={styles.profileName}>{userInfo.name}</span>
           <span className={styles.profileRole}>{userInfo.role}</span>
+          <br/>
           <button onClick={handleEditToggle} className={styles.editButton}>Modifier</button>
         </div>
       )}

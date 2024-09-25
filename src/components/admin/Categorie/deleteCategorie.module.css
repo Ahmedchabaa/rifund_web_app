@@ -1,41 +1,66 @@
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalContent {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-  }
-  
-  .buttonContainer {
-    margin-top: 20px;
-  }
-  
-  .confirmButton {
-    background-color: #77A83A;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .cancelButton {
-    background-color: #ccc;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay for better visibility */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal appears above other elements */
+}
+
+.modalContent {
+  background: white;
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 8px;
+  width: 350px; /* Slightly wider for more content */
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+}
+
+h3 {
+  margin-bottom: 15px; /* Spacing below the heading */
+}
+
+p {
+  margin-bottom: 20px; /* Spacing below the paragraph */
+  color: #555; /* Softer color for better readability */
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around; /* Evenly space buttons */
+}
+
+.confirmButton {
+  background-color: #77A83A;
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Slightly larger padding */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.cancelButton {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 12px 24px; /* Consistent padding with confirm button */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.confirmButton:hover {
+  background-color: #44651B; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.cancelButton:hover {
+  background-color: #bbb; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}

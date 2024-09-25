@@ -38,7 +38,7 @@ function Sidebar({ activeItem, onSetActiveItem }) {
       </h1>
       <div className={styles.userProfile}>
         <hr className={styles.divider} />
-        <img src={"insaf.jpg"} alt="Profile" className={styles.profilePhotoImage} />
+        <img src={"user.png"} alt="Profile" className={styles.profilePhotoImage} />
         <div className={styles.userInfo}>
           <span className={styles.userName}>Khadhraoui Insaf</span>
           <FontAwesomeIcon icon={faCaretDown} className={styles.userStatus} onClick={handleDropdownToggle} />

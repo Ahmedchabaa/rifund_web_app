@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './AddCategoryForm.module.css'; // Create this CSS file for styling
+import styles from './AddCategoryForm.module.css';
 
 const AddCategoryForm = ({ onClose }) => {
   const [categoryName, setCategoryName] = useState('');
@@ -15,7 +15,6 @@ const AddCategoryForm = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Category Name:', categoryName);
     console.log('Image:', image);
 
